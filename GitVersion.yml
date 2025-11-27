@@ -1,10 +1,7 @@
+label: auspice
 branches:
   develop:
     increment: None
-    label: auspice
-  auspice:
-    increment: None
-    label: auspice
   main:
     increment: None
     mode: ContinuousDeployment
