@@ -33,11 +33,11 @@ public class DuckDBConnectionStringBuilder : DbConnectionStringBuilder
             ConfigurationOptions.Add(name.ToManagedString(false));
         }
 
-#if CI
-        DuckDBApi = $"DuckDB.NET/{GitVersionInformation.FullSemVer}"; 
-#else
+// #if CI
+//         DuckDBApi = $"DuckDB.NET/{GitVersionInformation.FullSemVer}";
+// #else
         DuckDBApi = $"DuckDB.NET";
-#endif
+// #endif
     }
 
     internal static DuckDBConnectionString Parse(string connectionString)

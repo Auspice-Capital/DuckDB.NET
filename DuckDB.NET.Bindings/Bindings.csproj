@@ -18,7 +18,7 @@ Updated to DuckDB v1.4.2
   <PropertyGroup Condition="'$(BuildType)' == 'ManagedOnly' ">
     <Description>$(Description) $(NoNativeText)</Description>
   </PropertyGroup>
-  
+
   <!-- Download and include the native libraries into the NuGet package-->
   <Target Name="DownloadNativeLibs" BeforeTargets="GenerateAdditionalSources" Condition="'$(BuildType)' == 'Full' ">
     <MSBuild Projects="DownloadNativeLibs.targets" Properties="Rid=win-x64;LibUrl=$(DuckDbArtifactRoot)/libduckdb-windows-amd64.zip" />
@@ -39,9 +39,9 @@ Updated to DuckDB v1.4.2
       <Link>runtimes\%(RecursiveDir)\%(FileName)%(Extension)</Link>
     </None>
   </ItemGroup>
-  <ItemGroup Condition="'$(CI)' == 'true'">
+  <!-- <ItemGroup Condition="'$(CI)' == 'true'">
     <PackageReference Include="GitVersion.MsBuild" Version="6.4.0" PrivateAssets="all" />
-  </ItemGroup>
+  </ItemGroup> -->
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.1.0" />
   </ItemGroup>
